@@ -1,0 +1,127 @@
+"""
+@generated
+cargo-raze crate build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+# buildifier: disable=load
+load(
+    "@rules_rust//rust:rust.bzl",
+    "rust_binary",
+    "rust_library",
+    "rust_test",
+)
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//proj/ebd/cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
+])
+
+# Generated Targets
+# buildifier: disable=out-of-order-load
+# buildifier: disable=load-on-top
+load(
+    "@rules_rust//cargo:cargo_build_script.bzl",
+    "cargo_build_script",
+)
+
+cargo_build_script(
+    name = "cortex_m_rt_build_script",
+    srcs = glob(["**/*.rs"]),
+    build_script_env = {
+    },
+    crate_features = [
+    ],
+    crate_root = "build.rs",
+    data = glob(["**"]),
+    edition = "2015",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+    version = "0.6.13",
+    visibility = ["//visibility:private"],
+    deps = [
+    ],
+)
+
+# Unsupported target "alignment" with type "example" omitted
+
+# Unsupported target "cfg-static" with type "example" omitted
+
+# Unsupported target "data_overflow" with type "example" omitted
+
+# Unsupported target "device" with type "example" omitted
+
+# Unsupported target "divergent-default-handler" with type "example" omitted
+
+# Unsupported target "divergent-exception" with type "example" omitted
+
+# Unsupported target "entry-static" with type "example" omitted
+
+# Unsupported target "main" with type "example" omitted
+
+# Unsupported target "minimal" with type "example" omitted
+
+# Unsupported target "override-exception" with type "example" omitted
+
+# Unsupported target "pre_init" with type "example" omitted
+
+# Unsupported target "qemu" with type "example" omitted
+
+# Unsupported target "state" with type "example" omitted
+
+# Unsupported target "unsafe-default-handler" with type "example" omitted
+
+# Unsupported target "unsafe-entry" with type "example" omitted
+
+# Unsupported target "unsafe-exception" with type "example" omitted
+
+# Unsupported target "unsafe-hard-fault" with type "example" omitted
+
+# Unsupported target "unsafety" with type "example" omitted
+
+# Unsupported target "warnings" with type "example" omitted
+
+rust_library(
+    name = "cortex_m_rt",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+    ],
+    crate_root = "src/lib.rs",
+    crate_type = "lib",
+    data = [],
+    edition = "2015",
+    proc_macro_deps = [
+        "//proj/ebd/cargo/vendor/cortex-m-rt-macros-0.1.8:cortex_m_rt_macros",
+    ],
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+    version = "0.6.13",
+    # buildifier: leave-alone
+    deps = [
+        "//proj/ebd/cargo/vendor/r0-0.2.2:r0",
+        ":cortex_m_rt_build_script",
+    ],
+)
+
+# Unsupported target "compiletest" with type "test" omitted

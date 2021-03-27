@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eux
+
+bazel run @cargo_raze//:raze -- --manifest-path=$(realpath "$1")

@@ -1,0 +1,8 @@
+load("@rules_rust//rust:rust.bzl", "rust_analyzer")
+
+rust_analyzer(
+    name = "rust_analyzer",
+    targets = [
+        "//proj/ebd",
+    ],
+)

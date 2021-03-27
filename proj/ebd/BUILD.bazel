@@ -1,0 +1,12 @@
+load("@rules_rust//rust:rust.bzl", "rust_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+rust_binary(
+    name = "ebd",
+    srcs = ["src/main.rs"],
+    deps = [
+        "//proj/ebd/cargo:cortex_m_rt",
+        "//proj/ebd/cargo:panic_halta",
+    ],
+)

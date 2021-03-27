@@ -1,0 +1,49 @@
+"""
+@generated
+cargo-raze generated Bazel file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+package(default_visibility = ["//visibility:public"])
+
+licenses([
+    "notice",  # See individual crates for specific licenses
+])
+
+# Aliased targets
+alias(
+    name = "cortex_m",
+    actual = "//proj/ebd/cargo/vendor/cortex-m-0.6.7:cortex_m",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "cortex_m_rt",
+    actual = "//proj/ebd/cargo/vendor/cortex-m-rt-0.6.13:cortex_m_rt",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "cortex_m_semihosting",
+    actual = "//proj/ebd/cargo/vendor/cortex-m-semihosting-0.3.7:cortex_m_semihosting",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "panic_halt",
+    actual = "//proj/ebd/cargo/vendor/panic-halt-0.2.0:panic_halt",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
